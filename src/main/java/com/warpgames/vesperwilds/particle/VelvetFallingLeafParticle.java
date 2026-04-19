@@ -17,7 +17,7 @@ public class VelvetFallingLeafParticle extends FallingLeavesParticle {
 
     protected VelvetFallingLeafParticle(ClientLevel level, double x, double y, double z, SpriteSet spriteSet) {
         // Pass standard values to super
-        super(level, x, y, z, spriteSet.get(level.random), 0.12F, 2.0F, false, true, 1.0F, 0.0F);
+        super(level, x, y, z, spriteSet.get(level.getRandom()), 0.12F, 2.0F, false, true, 1.0F, 0.0F);
 
         this.lifetime = 600; // 30 Seconds max life
 

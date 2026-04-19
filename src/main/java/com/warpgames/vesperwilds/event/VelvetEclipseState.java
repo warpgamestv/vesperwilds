@@ -7,8 +7,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.datafix.DataFixTypes;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.saveddata.SavedDataType;
-import net.minecraft.world.level.storage.DimensionDataStorage;
-
+import net.minecraft.resources.Identifier;
 public class VelvetEclipseState extends SavedData {
     public boolean active = false;
     public long lastDayChecked = -1;
@@ -25,7 +24,7 @@ public class VelvetEclipseState extends SavedData {
                     }));
 
     public static final SavedDataType<VelvetEclipseState> TYPE = new SavedDataType<>(
-            "vesperwilds_velvet_eclipse",
+            Identifier.parse("vesperwilds:velvet_eclipse"),
             VelvetEclipseState::new,
             CODEC,
             DataFixTypes.SAVED_DATA_COMMAND_STORAGE);
@@ -36,7 +35,7 @@ public class VelvetEclipseState extends SavedData {
     public static VelvetEclipseState getServerState(MinecraftServer server) {
         // We save the event in the Overworld's data storage, as the eclipse is an
         // Overworld event
-        DimensionDataStorage storage = server.overworld().getDataStorage();
+        var storage = server.overworld().getDataStorage();
         return storage.computeIfAbsent(TYPE);
     }
 }

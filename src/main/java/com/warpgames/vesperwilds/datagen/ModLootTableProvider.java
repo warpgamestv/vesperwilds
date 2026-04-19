@@ -2,8 +2,8 @@ package com.warpgames.vesperwilds.datagen;
 
 import com.warpgames.vesperwilds.ModEntities;
 import com.warpgames.vesperwilds.ModItems;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.minecraft.core.HolderLookup; // standard for 1.21 MojMap
 import com.warpgames.vesperwilds.ModBlocks; // Ensure this points to your blocks
 import net.minecraft.world.level.block.Block;
@@ -12,9 +12,9 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModLootTableProvider extends FabricBlockLootTableProvider {
+public class ModLootTableProvider extends FabricBlockLootSubProvider {
 
-    public ModLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
+    public ModLootTableProvider(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataOutput, registryLookup);
     }
 

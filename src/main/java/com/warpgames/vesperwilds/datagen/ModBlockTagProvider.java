@@ -1,8 +1,8 @@
 package com.warpgames.vesperwilds.datagen;
 
-import com.jcraft.jorbis.Block;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.world.level.block.Block;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
 import com.warpgames.vesperwilds.ModBlocks; // Ensure this imports your ModBlocks class
@@ -10,14 +10,14 @@ import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
-        public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
+        public ModBlockTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
                 super(output, registriesFuture);
         }
 
         @Override
         protected void addTags(HolderLookup.Provider wrapperLookup) {
-                // 1. Use 'getOrCreateTagBuilder' (Standard Fabric way)
+                // 1. Use 'valueLookupBuilder' (Standard Fabric way)
                 // do NOT use 'getOrCreateRawBuilder' (That was your second error)
 
                 // Connects your fences to other fences

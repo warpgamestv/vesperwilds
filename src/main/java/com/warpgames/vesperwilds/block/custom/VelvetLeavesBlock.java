@@ -29,8 +29,8 @@ public class VelvetLeavesBlock extends LeavesBlock {
         // Run standard leaf logic (water drips, etc.)
         super.animateTick(state, level, pos, random);
 
-        // FORCE SPAWN: 1 in 10 chance per tick (Very frequent)
-        if (random.nextInt(10) == 0) {
+        // FORCE SPAWN: 1 in 60 chance per tick (Reduced frequency)
+        if (random.nextInt(60) == 0) {
             // Spawn BELOW the block
             double x = pos.getX() + random.nextDouble();
             double z = pos.getZ() + random.nextDouble();

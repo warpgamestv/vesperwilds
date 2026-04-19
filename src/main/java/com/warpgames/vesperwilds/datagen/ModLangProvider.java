@@ -3,13 +3,13 @@ package com.warpgames.vesperwilds.datagen;
 import com.warpgames.vesperwilds.ModBiomes;
 import com.warpgames.vesperwilds.ModBlocks; // Keep this if you have blocks without items (uncommon)
 import com.warpgames.vesperwilds.ModItems;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
 import java.util.concurrent.CompletableFuture;
 
 public class ModLangProvider extends FabricLanguageProvider {
-    public ModLangProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
+    public ModLangProvider(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataOutput, "en_us", registryLookup);
     }
 

@@ -9,8 +9,8 @@
 	],
 	"contact": {
 		"homepage": "https://warpgamestv.com",
-		"sources": "https://github.com/warpgamestv/vesperwilds-1.21.11",
-		"wiki": "https://github.com/warpgamestv/vesperwilds-1.21.11/wiki"
+		"sources": "https://github.com/warpgamestv/vesperwilds",
+		"wiki": "https://github.com/warpgamestv/vesperwilds/wiki"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/vesper_wilds/icon.png",
@@ -32,9 +32,9 @@
 		"vesperwilds.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.18.4",
-		"minecraft": "~1.21.11",
-		"java": ">=21",
+		"fabricloader": ">=0.19.2",
+		"minecraft": ">=26.1 <=26.1.2",
+		"java": ">=25",
 		"fabric-api": "*",
 		"terrablender": "*"
 	}

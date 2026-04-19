@@ -1,16 +1,17 @@
 package com.warpgames.vesperwilds;
-
-import com.warpgames.vesperwilds.VesperWilds;
-import net.minecraft.resources.Identifier;
-import software.bernie.geckolib.model.DefaultedEntityGeoModel;
-import software.bernie.geckolib.animatable.GeoAnimatable;
-
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.storage.ServerLevelData;
+import net.minecraft.world.level.Level;
+import java.lang.reflect.Method;
 public class Reflector {
     public static void main(String[] args) {
-        DefaultedEntityGeoModel<GeoAnimatable> model = new DefaultedEntityGeoModel<>(
-                Identifier.fromNamespaceAndPath(VesperWilds.MOD_ID, "gloom_stalker"));
-        System.out.println("Model Resource: " + model.getModelResource(null));
-        System.out.println("Texture Resource: " + model.getTextureResource(null));
-        System.out.println("Animation Resource: " + model.getAnimationResource(null));
+        System.out.println("Methods in ServerLevel returning long:");
+        for(Method m : ServerLevel.class.getMethods()) {
+            if(m.getReturnType() == long.class) System.out.println(m.getName());
+        }
+        System.out.println("Methods in Level returning long:");
+        for(Method m : Level.class.getMethods()) {
+            if(m.getReturnType() == long.class) System.out.println(m.getName());
+        }
     }
 }

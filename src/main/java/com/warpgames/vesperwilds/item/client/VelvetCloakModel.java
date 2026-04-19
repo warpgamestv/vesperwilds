@@ -3,8 +3,8 @@ package com.warpgames.vesperwilds.item.client;
 import com.warpgames.vesperwilds.VesperWilds;
 import com.warpgames.vesperwilds.item.custom.VelvetCloakItem;
 import net.minecraft.resources.Identifier;
-import software.bernie.geckolib.model.GeoModel;
-import software.bernie.geckolib.renderer.base.GeoRenderState;
+import com.geckolib.model.GeoModel;
+import com.geckolib.renderer.base.GeoRenderState;
 
 public class VelvetCloakModel extends GeoModel<VelvetCloakItem> {
 

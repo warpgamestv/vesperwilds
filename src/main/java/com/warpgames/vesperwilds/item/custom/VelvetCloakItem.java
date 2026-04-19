@@ -8,12 +8,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.animatable.GeoItem;
-import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.util.GeckoLibUtil;
-import software.bernie.geckolib.animatable.client.GeoRenderProvider;
-import software.bernie.geckolib.animatable.manager.AnimatableManager;
+import com.geckolib.animatable.GeoItem;
+import com.geckolib.animatable.SingletonGeoAnimatable;
+import com.geckolib.animatable.instance.AnimatableInstanceCache;
+import com.geckolib.util.GeckoLibUtil;
+import com.geckolib.animatable.client.GeoRenderProvider;
+import com.geckolib.animatable.manager.AnimatableManager;
 
 import java.util.function.Consumer;
 
@@ -31,7 +31,7 @@ public class VelvetCloakItem extends Item implements GeoItem {
             private com.warpgames.vesperwilds.item.client.VelvetCloakRenderer<?> renderer;
 
             @Override
-            public software.bernie.geckolib.renderer.GeoArmorRenderer<?, ?> getGeoArmorRenderer(
+            public com.geckolib.renderer.GeoArmorRenderer<?, ?> getGeoArmorRenderer(
                     net.minecraft.world.item.ItemStack itemStack,
                     net.minecraft.world.entity.EquipmentSlot equipmentSlot) {
                 if (this.renderer == null) {

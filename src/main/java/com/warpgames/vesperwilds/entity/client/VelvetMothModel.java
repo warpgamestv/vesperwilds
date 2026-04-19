@@ -3,7 +3,7 @@ package com.warpgames.vesperwilds.entity.client;
 import com.warpgames.vesperwilds.VesperWilds;
 import com.warpgames.vesperwilds.entity.custom.VelvetMothEntity;
 import net.minecraft.resources.Identifier;
-import software.bernie.geckolib.model.DefaultedEntityGeoModel;
+import com.geckolib.model.DefaultedEntityGeoModel;
 
 // Extend 'DefaultedEntityGeoModel' instead of just 'GeoModel'
 public class VelvetMothModel extends DefaultedEntityGeoModel<VelvetMothEntity> {

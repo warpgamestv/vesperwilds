@@ -16,7 +16,7 @@ public class VelvetEclipseManager {
     private static boolean ACTIVE = false;
 
     public static void init() {
-        ServerTickEvents.END_WORLD_TICK.register(level -> {
+        ServerTickEvents.END_LEVEL_TICK.register(level -> {
             if (level.dimension() == Level.OVERWORLD) {
                 tickEclipse(level);
             }
@@ -35,7 +35,7 @@ public class VelvetEclipseManager {
     }
 
     private static void tickEclipse(ServerLevel level) {
-        long totalTime = level.getDayTime();
+        long totalTime = level.getOverworldClockTime();
         long currentDay = totalTime / 24000L;
         long timeOfDay = totalTime % 24000L;
 
@@ -43,12 +43,14 @@ public class VelvetEclipseManager {
         ACTIVE = state.active; // Keep the fast check in sync
 
         // During the morning (0 to 1000 ticks), roll for eclipse if we haven't today
-        if (currentDay > state.lastDayChecked && timeOfDay >= 0 && timeOfDay < 1000) {
+        // We also check currentDay > 0 to prevent a new world from starting in an
+        // eclipse.
+        if (currentDay > 0 && currentDay > state.lastDayChecked && timeOfDay >= 0 && timeOfDay < 1000) {
             state.lastDayChecked = currentDay;
             state.setDirty();
 
             // 5% chance for a Velvet Eclipse to start
-            if (level.random.nextFloat() < 0.05f) {
+            if (level.getRandom().nextFloat() < 0.05f) {
                 startEclipse(level);
             }
         }

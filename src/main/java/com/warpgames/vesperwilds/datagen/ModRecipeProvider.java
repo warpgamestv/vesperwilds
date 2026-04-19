@@ -7,19 +7,20 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.BlastingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.item.crafting.CookingBookCategory;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
-        public ModRecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+        public ModRecipeProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
                 super(output, registriesFuture);
         }
 
@@ -190,6 +191,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                                         SimpleCookingRecipeBuilder.blasting(
                                                         Ingredient.of(item), // Input
                                                         RecipeCategory.MISC, // Category
+                                                        CookingBookCategory.MISC, // Book Category
                                                         ModItems.VESPERITE_INGOT, // Output
                                                         0.7f, // XP (float)
                                                         100 // Time (int) - 100 ticks = 5 seconds
@@ -206,6 +208,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                                         SimpleCookingRecipeBuilder.smelting(
                                                         Ingredient.of(item),
                                                         RecipeCategory.MISC,
+                                                        CookingBookCategory.MISC,
                                                         ModItems.VESPERITE_INGOT,
                                                         0.7f,
                                                         200 // 200 ticks = 10 seconds

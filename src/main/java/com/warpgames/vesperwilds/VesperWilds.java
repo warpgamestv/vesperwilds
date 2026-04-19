@@ -14,7 +14,7 @@ import com.warpgames.vesperwilds.event.VelvetEclipseManager;
 import com.warpgames.vesperwilds.network.ModMessages;
 import com.warpgames.vesperwilds.command.VelvetEclipseCommand;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.Registry;
@@ -25,7 +25,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import software.bernie.geckolib.GeckoLibConstants;
+import com.geckolib.GeckoLibConstants;
 import terrablender.api.SurfaceRuleManager;
 
 public class VesperWilds implements ModInitializer {
@@ -36,7 +36,7 @@ public class VesperWilds implements ModInitializer {
 	public static final CreativeModeTab VESPER_BLOCKS_TAB = Registry.register(
 			BuiltInRegistries.CREATIVE_MODE_TAB,
 			Identifier.fromNamespaceAndPath(MOD_ID, "vesper_blocks_tab"),
-			FabricItemGroup.builder()
+			FabricCreativeModeTab.builder()
 					.icon(() -> new ItemStack(ModItems.VELVET_LOG)) // Icon for the tab
 					.title(Component.literal("Vesper Wilds: Blocks")) // Title of the tab
 					.displayItems((context, entries) -> {
@@ -70,7 +70,7 @@ public class VesperWilds implements ModInitializer {
 	public static final CreativeModeTab VESPER_ITEMS_TAB = Registry.register(
 			BuiltInRegistries.CREATIVE_MODE_TAB,
 			Identifier.fromNamespaceAndPath(MOD_ID, "vesper_items_tab"),
-			FabricItemGroup.builder()
+			FabricCreativeModeTab.builder()
 					.icon(() -> new ItemStack(ModItems.RAW_VESPERITE))
 					.title(Component.literal("Vesper Wilds: Items"))
 					.displayItems((context, entries) -> {
@@ -87,7 +87,7 @@ public class VesperWilds implements ModInitializer {
 	public static final CreativeModeTab VESPER_TOOLS_TAB = Registry.register(
 			BuiltInRegistries.CREATIVE_MODE_TAB,
 			Identifier.fromNamespaceAndPath(MOD_ID, "vesper_tools_tab"),
-			FabricItemGroup.builder()
+			FabricCreativeModeTab.builder()
 					.icon(() -> new ItemStack(ModItems.VESPERITE_PICKAXE))
 					.title(Component.literal("Vesper Wilds: Tools & Combat"))
 					.displayItems((context, entries) -> {

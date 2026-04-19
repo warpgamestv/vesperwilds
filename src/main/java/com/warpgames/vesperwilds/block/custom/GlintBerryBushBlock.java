@@ -78,9 +78,9 @@ public class GlintBerryBushBlock extends BushBlock implements BonemealableBlock 
 
         // Harvest Logic
         if (age > 1) {
-            int count = 1 + level.random.nextInt(2);
+            int count = 1 + level.getRandom().nextInt(2);
             popResource(level, blockPos, new ItemStack(ModItems.GLINT_BERRIES, count + (isFullGrown ? 1 : 0)));
-            level.playSound(null, blockPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+            level.playSound(null, blockPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.getRandom().nextFloat() * 0.4F);
 
             BlockState newState = blockState.setValue(AGE, 1);
             level.setBlock(blockPos, newState, 2);

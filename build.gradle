@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version "${loom_version}"
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
 	id 'maven-publish'
 }
 
@@ -11,24 +11,10 @@ base {
 }
 
 repositories {
-	// Standard repositories
-	maven { url = "https://maven.parchmentmc.org" }
-
-	// TerraBlender Repository
+	// CurseMaven for TerraBlender and GeckoLib
 	maven {
-		name = "TerraBlender"
-		url = "https://maven.minecraftforge.net/"
-	}
-	exclusiveContent {
-		forRepository {
-			maven {
-				name = 'GeckoLib'
-				url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
-			}
-		}
-		filter {
-			includeGroup('software.bernie.geckolib')
-		}
+		name = "CurseMaven"
+		url = "https://www.cursemaven.com"
 	}
 }
 
@@ -40,13 +26,13 @@ fabricApi {
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings loom.officialMojangMappings()
 
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	// TerraBlender Dependency
-	modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
-	modImplementation "software.bernie.geckolib:geckolib-fabric-${minecraft_version}:${geckolib_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	// TerraBlender Dependency (via CurseMaven file ID)
+	implementation "curse.maven:terrablender-fabric-565956:7933873"
+	// GeckoLib Dependency (via CurseMaven file ID)
+	implementation "curse.maven:geckolib-388172:7913636"
 }
 
 processResources {
@@ -60,13 +46,13 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 21
+	it.options.release = 25
 }
 
 java {
 	withSourcesJar()
-	sourceCompatibility = JavaVersion.VERSION_21
-	targetCompatibility = JavaVersion.VERSION_21
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
 }
 
 jar {
