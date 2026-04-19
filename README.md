@@ -1,7 +1,7 @@
 # 🌑 Vesper Wilds
 
 ![Fabric](https://img.shields.io/badge/Loader-Fabric-beige?style=for-the-badge)
-![Minecraft](https://img.shields.io/badge/Minecraft-26.1.*-darkgreen?style=for-the-badge)
+![Minecraft](https://img.shields.io/badge/Minecraft-1.21.11-darkgreen?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-ALPHA-purple?style=for-the-badge)
 <a href="https://www.curseforge.com/minecraft/mc-mods/vesper-wilds"><img src="https://img.shields.io/badge/CurseForge-0.0.31-orange?style=for-the-badge" alt="CurseForge"/></a>
 <a href="https://modrinth.com/mod/vesper-wilds"><img src="https://img.shields.io/badge/Modrinth-0.0.31-green?style=for-the-badge" alt="Modrinth"/></a>
